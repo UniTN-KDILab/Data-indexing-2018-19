@@ -1,0 +1,849 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:8070/PEI_ontology#"
+     xml:base="http://localhost:8070/PEI_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:pei="http://localhost:8070/PEI_ontology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost:8070/PEI_ontology">
+        <owl:versionIRI rdf:resource="http://localhost:8070/PEI_ontology/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Composition -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#Composition">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Relations"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Placement -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#Placement">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Relations"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Relations -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#Relations"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasDataset -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasDataset">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isDataset"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasDataset"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasDataset"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasDataset"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasEvent">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isEvent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasEvent"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasEvent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasOrganization">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isOrganization"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasOrganization"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasOrganization"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasOrganization"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasPerson -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasPerson">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isPerson"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPerson"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isPhoto"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPhoto"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPhoto"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPhoto"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasPlace -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasPlace">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Placement"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isPlace"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPlace"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasPlace"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#hasProvenience -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#hasProvenience">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Placement"/>
+        <owl:inverseOf rdf:resource="http://localhost:8070/PEI_ontology#isProvenience"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasProvenience"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#hasProvenience"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isDataset -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isDataset">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isDataset"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isDataset"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isDataset"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isEvent -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isEvent">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isEvent"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isEvent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isOrganization">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isOrganization"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isOrganization"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isOrganization"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isPerson -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isPerson">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPerson"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Composition"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPhoto"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPhoto"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPhoto"/>
+                <owl:allValuesFrom rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isPlace -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isPlace">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Placement"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPlace"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isPlace"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#isProvenience -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8070/PEI_ontology#isProvenience">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#Placement"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isProvenience"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8070/PEI_ontology#isProvenience"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#DatasetID -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#DatasetID">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#DatasetProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#DatasetName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#DatasetName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#DatasetProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#DatasetProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#DatasetProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#EventName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#EventName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#EventProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#EventProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#EventProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#FirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#FirstName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PersonProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Folder -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#Folder">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#ProvenienceProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#LastName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#LastName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PersonProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#NumberGB -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#NumberGB">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#DatasetProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#NumberImages -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#NumberImages">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#DatasetProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#OrganizationName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#OrganizationName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#OrganizationProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#OrganizationProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#OrganizationProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#OrganizationURL -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#OrganizationURL">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#OrganizationProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PersonProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PersonProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PhotoFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PhotoFormat">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PhotoProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PhotoID -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PhotoID">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PhotoProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PhotoName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PhotoName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PhotoProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PhotoProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PhotoProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PlaceName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PlaceName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PlaceProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PlaceProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PlaceProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PlaceURL -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PlaceURL">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PlaceProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Presence -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#Presence">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#EventProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PriorClass -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#PriorClass">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#EventProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#ProvenienceProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#ProvenienceProperty"/>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#ProvenienceURL -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#ProvenienceURL">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#ProvenienceProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Provenience"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Reference -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#Reference">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#PersonProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#SubClass -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#SubClass">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#EventProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Time -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8070/PEI_ontology#Time">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8070/PEI_ontology#EventProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:8070/PEI_ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Dataset -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Dataset">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#DigitalGroup"/>
+        <rdfs:comment>Dataset here means a group of InformationObjects.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#DigitalGroup -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#DigitalGroup">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#GroupingObject"/>
+        <owl:disjointWith rdf:resource="http://localhost:8070/PEI_ontology#PersonGroup"/>
+        <rdfs:comment>Group of digital objects</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#DigitalLocation -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#DigitalLocation">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#Location"/>
+        <owl:disjointWith rdf:resource="http://localhost:8070/PEI_ontology#PhysicalLocation"/>
+        <rdfs:comment>DigitalLocation is intended as the digital location of the data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Event -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Event">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#SocialProduct"/>
+        <rdfs:comment>Something that happens at a given place and time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#GroupingObject -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#GroupingObject">
+        <rdfs:comment>As GroupingObject we mean all the objects grouped.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Human -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Human">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#LivingObject"/>
+        <rdfs:comment>Any living or extinct member of the family Hominidae characterized by superior intelligence, articulate speech, and erect carriage.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#InformationObject -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#InformationObject">
+        <rdfs:comment>InformationObject is the Object which carries information from the semanthical point of view.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#LivingObject -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#LivingObject">
+        <rdfs:comment>Any object which lives.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Location -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Location">
+        <rdfs:comment>A determination of the place where something is.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Media -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Media">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#InformationObject"/>
+        <rdfs:comment>A means or instrumentality for storing or communicating information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Organization -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Organization">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#PersonGroup"/>
+        <rdfs:comment>It can be a research group, a private owner, or other.
+It is the owner of the dataset.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Person -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Person">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#Human"/>
+        <rdfs:comment>A human being.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PersonGroup -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#PersonGroup">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#GroupingObject"/>
+        <rdfs:comment>Group of person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Photo -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Photo">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#Media"/>
+        <rdfs:comment>A representation of a person or scene in the form of a print or transparent slide or in digital format.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#PhysicalLocation -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#PhysicalLocation">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#Location"/>
+        <rdfs:comment>Real physical location (ex: city)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Place -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Place">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#PhysicalLocation"/>
+        <rdfs:comment>A point located with respect to surface features of some region.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#Provenience -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#Provenience">
+        <rdfs:subClassOf rdf:resource="http://localhost:8070/PEI_ontology#DigitalLocation"/>
+        <rdfs:comment>Where something originated or was nurtured in its early existence. In this case, the digital provenience.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8070/PEI_ontology#SocialProduct -->
+
+    <owl:Class rdf:about="http://localhost:8070/PEI_ontology#SocialProduct">
+        <rdfs:comment>As SocialProduct we mean the product generated by the social interaction of people</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://localhost:8070/PEI_ontology#GroupingObject"/>
+            <rdf:Description rdf:about="http://localhost:8070/PEI_ontology#InformationObject"/>
+            <rdf:Description rdf:about="http://localhost:8070/PEI_ontology#LivingObject"/>
+            <rdf:Description rdf:about="http://localhost:8070/PEI_ontology#Location"/>
+            <rdf:Description rdf:about="http://localhost:8070/PEI_ontology#SocialProduct"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+

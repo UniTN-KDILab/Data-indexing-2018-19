@@ -1,0 +1,1692 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pei: <http://localhost:8070/PEI_ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:node1cum3mkvqx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "datasets.csv" ;
+	km-dev:modelPublicationTime "1544782828538"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"LastName\"}],[{\"columnName\":\"DatasetID\"}],[{\"columnName\":\"Reference\"}],[{\"columnName\":\"NumberImages\"}],[{\"columnName\":\"DatasetName\"}],[{\"columnName\":\"ProvenienceURL\"}],[{\"columnName\":\"NumberGB\"}],[{\"columnName\":\"OrganizationName\"}],[{\"columnName\":\"Folder\"}],[{\"columnName\":\"FirstName\"}],[{\"columnName\":\"OrganizationURL\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"LastName\"}],[{\"columnName\":\"DatasetID\"}],[{\"columnName\":\"Reference\"}],[{\"columnName\":\"NumberImages\"}],[{\"columnName\":\"DatasetName\"}],[{\"columnName\":\"ProvenienceURL\"}],[{\"columnName\":\"NumberGB\"}],[{\"columnName\":\"OrganizationName\"}],[{\"columnName\":\"DatasetURI\"}],[{\"columnName\":\"Folder\"}],[{\"columnName\":\"FirstName\"}],[{\"columnName\":\"OrganizationURL\"}],[{\"columnName\":\"OrganizationURI\"}]]" ;
+	km-dev:hasModelLabel "datasets.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DatasetName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"DatasetURI\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"http = \\\"http://PEI_project/\\\"\\nfolder = getValue(\\\"Folder\\\")\\n\\nreturn http+folder\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"Folder\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"OrganizeColumnsCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"orderedColumns\",
+                \"type\": \"orderedColumns\",
+                \"value\": [
+                    {
+                        \"visible\": true,
+                        \"name\": \"DatasetID\",
+                        \"id\": [{\"columnName\": \"DatasetID\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"DatasetName\",
+                        \"id\": [{\"columnName\": \"DatasetName\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"NumberImages\",
+                        \"id\": [{\"columnName\": \"NumberImages\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"NumberGB\",
+                        \"id\": [{\"columnName\": \"NumberGB\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"ProvenienceURL\",
+                        \"id\": [{\"columnName\": \"ProvenienceURL\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"Folder\",
+                        \"id\": [{\"columnName\": \"Folder\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"OrganizationName\",
+                        \"id\": [{\"columnName\": \"OrganizationName\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"OrganizationURL\",
+                        \"id\": [{\"columnName\": \"OrganizationURL\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"FirstName\",
+                        \"id\": [{\"columnName\": \"FirstName\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"LastName\",
+                        \"id\": [{\"columnName\": \"LastName\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"Reference\",
+                        \"id\": [{\"columnName\": \"Reference\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"DatasetURI\",
+                        \"id\": [{\"columnName\": \"DatasetURI\"}]
+                    }
+                ]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [
+            \"Transformation\",
+            \"IgnoreInBatch\"
+        ]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"OrganizationName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"OrganizationURI\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"http = \\\"http://PEI_project/\\\"\\nname = getValue(\\\"OrganizationName\\\")\\nfull_name = getValue(\\\"FirstName\\\")+\\\"_\\\"+getValue(\\\"LastName\\\")\\nmail = getValue(\\\"Reference\\\")\\nmerged = http+name+\\\"/\\\"+full_name+\\\":\\\"+mail\\nreturn merged\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"LastName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"Reference\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"FirstName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DatasetID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#DatasetID\",
+                    \"DomainLabel\": \"Dataset1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DatasetName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#DatasetName\",
+                    \"DomainLabel\": \"Dataset1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetName\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"NumberImages\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#NumberImages\",
+                    \"DomainLabel\": \"Dataset1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"NumberImages\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"NumberImages\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"NumberGB\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#NumberGB\",
+                    \"DomainLabel\": \"Dataset1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"NumberGB\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"NumberGB\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ProvenienceURL\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Provenience\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#ProvenienceURL\",
+                    \"DomainLabel\": \"pei:Provenience1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ProvenienceURL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ProvenienceURL\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"Folder\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Provenience\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#Folder\",
+                    \"DomainLabel\": \"pei:Provenience1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"Folder\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"Folder\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"OrganizationName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#OrganizationName\",
+                    \"DomainLabel\": \"pei:Organization1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationName\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"OrganizationURL\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#OrganizationURL\",
+                    \"DomainLabel\": \"pei:Organization1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationURL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationURL\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"FirstName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Person\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Person1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#FirstName\",
+                    \"DomainLabel\": \"pei:Person1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"FirstName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"FirstName\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"LastName\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Person\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Person1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#LastName\",
+                    \"DomainLabel\": \"pei:Person1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"LastName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"LastName\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"Reference\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Person\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Person1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://localhost:8070/PEI_ontology#Reference\",
+                    \"DomainLabel\": \"Person1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"Reference\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"Reference\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DatasetURI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://localhost:8070/PEI_ontology#Dataset\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://localhost:8070/PEI_ontology#Dataset1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"pei:Dataset1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetURI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DatasetURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"OrganizationURI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://localhost:8070/PEI_ontology#Organization\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://localhost:8070/PEI_ontology#Organization1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"DomainId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"pei:Organization1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationURI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"OrganizationURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasOrganization\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Dataset\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasDataset\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Organization\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasProvenience\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Provenience\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Organization\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasProvenience\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Provenience\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Dataset\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Dataset1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasDataset\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Dataset\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Provenience\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasOrganization\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Provenience1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Provenience\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Person1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasPerson\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Person\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Organization\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://localhost:8070/PEI_ontology#Organization1\",
+                    \"edgeId\": \"http://localhost:8070/PEI_ontology#hasOrganization\",
+                    \"edgeTargetUri\": \"http://localhost:8070/PEI_ontology#Organization\",
+                    \"edgeSourceId\": \"http://localhost:8070/PEI_ontology#Person1\",
+                    \"edgeSourceUri\": \"http://localhost:8070/PEI_ontology#Person\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda a rr:TriplesMap .
+
+_:node1cum3mkvqx1 km-dev:hasTriplesMap km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx2 rr:tableName "datasets.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasLogicalTable _:node1cum3mkvqx2 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:logicalTable _:node1cum3mkvqx2 ;
+	rr:subjectMap _:node1cum3mkvqx3 .
+
+_:node1cum3mkvqx1 km-dev:hasSubjectMap _:node1cum3mkvqx3 .
+
+_:node1cum3mkvqx3 km-dev:isPartOfMapping _:node1cum3mkvqx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://localhost:8070/PEI_ontology#Dataset1" ;
+	rr:class pei:Dataset ;
+	rr:template "{DatasetURI}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_41e46f5d-bd7c-454d-a17c-ec2ad0532299 rr:predicate pei:hasProvenience .
+
+km-dev:RefObjectMap_8c46f88e-4953-4029-95ab-0d6a25252ae6 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_8c46f88e-4953-4029-95ab-0d6a25252ae6 .
+
+km-dev:PredicateObjectMap_41e46f5d-bd7c-454d-a17c-ec2ad0532299 rr:objectMap km-dev:RefObjectMap_8c46f88e-4953-4029-95ab-0d6a25252ae6 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_41e46f5d-bd7c-454d-a17c-ec2ad0532299 .
+
+km-dev:PredicateObjectMap_41e46f5d-bd7c-454d-a17c-ec2ad0532299 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_41e46f5d-bd7c-454d-a17c-ec2ad0532299 .
+
+km-dev:PredicateObjectMap_190995db-a1c7-474e-ab0c-04c9615c4dba rr:predicate pei:DatasetID .
+
+_:node1cum3mkvqx4 rr:column "DatasetID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx4 .
+
+km-dev:PredicateObjectMap_190995db-a1c7-474e-ab0c-04c9615c4dba rr:objectMap _:node1cum3mkvqx4 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_190995db-a1c7-474e-ab0c-04c9615c4dba .
+
+km-dev:PredicateObjectMap_190995db-a1c7-474e-ab0c-04c9615c4dba a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_190995db-a1c7-474e-ab0c-04c9615c4dba .
+
+km-dev:PredicateObjectMap_9b99ed8a-bedc-4bce-baa5-324ea1d3aced rr:predicate pei:NumberImages .
+
+_:node1cum3mkvqx5 rr:column "NumberImages" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx5 .
+
+km-dev:PredicateObjectMap_9b99ed8a-bedc-4bce-baa5-324ea1d3aced rr:objectMap _:node1cum3mkvqx5 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_9b99ed8a-bedc-4bce-baa5-324ea1d3aced .
+
+km-dev:PredicateObjectMap_9b99ed8a-bedc-4bce-baa5-324ea1d3aced a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9b99ed8a-bedc-4bce-baa5-324ea1d3aced .
+
+km-dev:PredicateObjectMap_1ce44b26-d8c7-4af8-98c4-41033cb6f1f8 rr:predicate pei:DatasetName .
+
+_:node1cum3mkvqx6 rr:column "DatasetName" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx6 .
+
+km-dev:PredicateObjectMap_1ce44b26-d8c7-4af8-98c4-41033cb6f1f8 rr:objectMap _:node1cum3mkvqx6 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_1ce44b26-d8c7-4af8-98c4-41033cb6f1f8 .
+
+km-dev:PredicateObjectMap_1ce44b26-d8c7-4af8-98c4-41033cb6f1f8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1ce44b26-d8c7-4af8-98c4-41033cb6f1f8 .
+
+km-dev:PredicateObjectMap_30b2af05-2ac1-4be5-a420-001aad0cfe55 rr:predicate pei:NumberGB .
+
+_:node1cum3mkvqx7 rr:column "NumberGB" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx7 .
+
+km-dev:PredicateObjectMap_30b2af05-2ac1-4be5-a420-001aad0cfe55 rr:objectMap _:node1cum3mkvqx7 .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_30b2af05-2ac1-4be5-a420-001aad0cfe55 .
+
+km-dev:PredicateObjectMap_30b2af05-2ac1-4be5-a420-001aad0cfe55 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_30b2af05-2ac1-4be5-a420-001aad0cfe55 .
+
+km-dev:PredicateObjectMap_c9300a73-486f-4839-9d7d-95293d8fa867 rr:predicate pei:hasOrganization .
+
+km-dev:RefObjectMap_5abf7a78-4af1-40bd-a416-c6a95bb5acfb a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_5abf7a78-4af1-40bd-a416-c6a95bb5acfb .
+
+km-dev:PredicateObjectMap_c9300a73-486f-4839-9d7d-95293d8fa867 rr:objectMap km-dev:RefObjectMap_5abf7a78-4af1-40bd-a416-c6a95bb5acfb .
+
+km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda rr:predicateObjectMap km-dev:PredicateObjectMap_c9300a73-486f-4839-9d7d-95293d8fa867 .
+
+km-dev:PredicateObjectMap_c9300a73-486f-4839-9d7d-95293d8fa867 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c9300a73-486f-4839-9d7d-95293d8fa867 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 a rr:TriplesMap .
+
+_:node1cum3mkvqx1 km-dev:hasTriplesMap km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx8 rr:tableName "datasets.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasLogicalTable _:node1cum3mkvqx8 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 rr:logicalTable _:node1cum3mkvqx8 ;
+	rr:subjectMap _:node1cum3mkvqx9 .
+
+_:node1cum3mkvqx1 km-dev:hasSubjectMap _:node1cum3mkvqx9 .
+
+_:node1cum3mkvqx9 km-dev:isPartOfMapping _:node1cum3mkvqx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://localhost:8070/PEI_ontology#Provenience1" ;
+	rr:class pei:Provenience ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "pei:Provenience1" .
+
+km-dev:PredicateObjectMap_3c8fe2d5-ef3d-4cad-a270-096d90c3ba65 rr:predicate pei:hasOrganization .
+
+km-dev:RefObjectMap_c218d5de-27a5-4a5c-9af8-c0d2cd5dde78 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_c218d5de-27a5-4a5c-9af8-c0d2cd5dde78 .
+
+km-dev:PredicateObjectMap_3c8fe2d5-ef3d-4cad-a270-096d90c3ba65 rr:objectMap km-dev:RefObjectMap_c218d5de-27a5-4a5c-9af8-c0d2cd5dde78 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 rr:predicateObjectMap km-dev:PredicateObjectMap_3c8fe2d5-ef3d-4cad-a270-096d90c3ba65 .
+
+km-dev:PredicateObjectMap_3c8fe2d5-ef3d-4cad-a270-096d90c3ba65 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3c8fe2d5-ef3d-4cad-a270-096d90c3ba65 .
+
+km-dev:PredicateObjectMap_8d46d0a3-a7bd-4826-b184-c29526a0e4ba rr:predicate pei:ProvenienceURL .
+
+_:node1cum3mkvqx10 rr:column "ProvenienceURL" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx10 .
+
+km-dev:PredicateObjectMap_8d46d0a3-a7bd-4826-b184-c29526a0e4ba rr:objectMap _:node1cum3mkvqx10 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 rr:predicateObjectMap km-dev:PredicateObjectMap_8d46d0a3-a7bd-4826-b184-c29526a0e4ba .
+
+km-dev:PredicateObjectMap_8d46d0a3-a7bd-4826-b184-c29526a0e4ba a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8d46d0a3-a7bd-4826-b184-c29526a0e4ba .
+
+km-dev:PredicateObjectMap_0519a01f-adb9-4640-9ed1-f6a0045a2bb5 rr:predicate pei:Folder .
+
+_:node1cum3mkvqx11 rr:column "Folder" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx11 .
+
+km-dev:PredicateObjectMap_0519a01f-adb9-4640-9ed1-f6a0045a2bb5 rr:objectMap _:node1cum3mkvqx11 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 rr:predicateObjectMap km-dev:PredicateObjectMap_0519a01f-adb9-4640-9ed1-f6a0045a2bb5 .
+
+km-dev:PredicateObjectMap_0519a01f-adb9-4640-9ed1-f6a0045a2bb5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0519a01f-adb9-4640-9ed1-f6a0045a2bb5 .
+
+km-dev:PredicateObjectMap_87a04d05-ce32-4dc4-a89e-19aa0ad54631 rr:predicate pei:hasDataset .
+
+km-dev:RefObjectMap_a62fb326-e672-4fb1-a351-14e71f44c4c3 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_a62fb326-e672-4fb1-a351-14e71f44c4c3 .
+
+km-dev:PredicateObjectMap_87a04d05-ce32-4dc4-a89e-19aa0ad54631 rr:objectMap km-dev:RefObjectMap_a62fb326-e672-4fb1-a351-14e71f44c4c3 .
+
+km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 rr:predicateObjectMap km-dev:PredicateObjectMap_87a04d05-ce32-4dc4-a89e-19aa0ad54631 .
+
+km-dev:PredicateObjectMap_87a04d05-ce32-4dc4-a89e-19aa0ad54631 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_87a04d05-ce32-4dc4-a89e-19aa0ad54631 .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a a rr:TriplesMap .
+
+_:node1cum3mkvqx1 km-dev:hasTriplesMap km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx12 rr:tableName "datasets.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasLogicalTable _:node1cum3mkvqx12 .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:logicalTable _:node1cum3mkvqx12 ;
+	rr:subjectMap _:node1cum3mkvqx13 .
+
+_:node1cum3mkvqx1 km-dev:hasSubjectMap _:node1cum3mkvqx13 .
+
+_:node1cum3mkvqx13 km-dev:isPartOfMapping _:node1cum3mkvqx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://localhost:8070/PEI_ontology#Organization1" ;
+	rr:class pei:Organization ;
+	rr:template "{OrganizationURI}" .
+
+km-dev:PredicateObjectMap_9b46e39c-dc2b-4b39-a1ba-504122f9f4fa rr:predicate pei:hasPerson .
+
+km-dev:RefObjectMap_5b045f59-94d3-461a-8632-6c11005379da a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_5b045f59-94d3-461a-8632-6c11005379da .
+
+km-dev:PredicateObjectMap_9b46e39c-dc2b-4b39-a1ba-504122f9f4fa rr:objectMap km-dev:RefObjectMap_5b045f59-94d3-461a-8632-6c11005379da .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:predicateObjectMap km-dev:PredicateObjectMap_9b46e39c-dc2b-4b39-a1ba-504122f9f4fa .
+
+km-dev:PredicateObjectMap_9b46e39c-dc2b-4b39-a1ba-504122f9f4fa a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9b46e39c-dc2b-4b39-a1ba-504122f9f4fa .
+
+km-dev:PredicateObjectMap_d8e55d72-a9f9-4164-b67f-466a1bf9f293 rr:predicate pei:OrganizationName .
+
+_:node1cum3mkvqx14 rr:column "OrganizationName" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx14 .
+
+km-dev:PredicateObjectMap_d8e55d72-a9f9-4164-b67f-466a1bf9f293 rr:objectMap _:node1cum3mkvqx14 .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:predicateObjectMap km-dev:PredicateObjectMap_d8e55d72-a9f9-4164-b67f-466a1bf9f293 .
+
+km-dev:PredicateObjectMap_d8e55d72-a9f9-4164-b67f-466a1bf9f293 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d8e55d72-a9f9-4164-b67f-466a1bf9f293 .
+
+km-dev:PredicateObjectMap_f9ab2e47-e225-4394-80d8-6fd8c59e9662 rr:predicate pei:OrganizationURL .
+
+_:node1cum3mkvqx15 rr:column "OrganizationURL" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx15 .
+
+km-dev:PredicateObjectMap_f9ab2e47-e225-4394-80d8-6fd8c59e9662 rr:objectMap _:node1cum3mkvqx15 .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:predicateObjectMap km-dev:PredicateObjectMap_f9ab2e47-e225-4394-80d8-6fd8c59e9662 .
+
+km-dev:PredicateObjectMap_f9ab2e47-e225-4394-80d8-6fd8c59e9662 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f9ab2e47-e225-4394-80d8-6fd8c59e9662 .
+
+km-dev:PredicateObjectMap_17f50443-dff3-4ad0-9284-9da2a5f66b2c rr:predicate pei:hasDataset .
+
+km-dev:RefObjectMap_732dd276-b3c6-4e00-a785-d4041ce64e9e a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_424c1720-a8d3-46a8-b6b7-580582afceda ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_732dd276-b3c6-4e00-a785-d4041ce64e9e .
+
+km-dev:PredicateObjectMap_17f50443-dff3-4ad0-9284-9da2a5f66b2c rr:objectMap km-dev:RefObjectMap_732dd276-b3c6-4e00-a785-d4041ce64e9e .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:predicateObjectMap km-dev:PredicateObjectMap_17f50443-dff3-4ad0-9284-9da2a5f66b2c .
+
+km-dev:PredicateObjectMap_17f50443-dff3-4ad0-9284-9da2a5f66b2c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_17f50443-dff3-4ad0-9284-9da2a5f66b2c .
+
+km-dev:PredicateObjectMap_38a25de6-0777-4bf0-ac92-b38ddd866026 rr:predicate pei:hasProvenience .
+
+km-dev:RefObjectMap_056f9e17-aa1f-4b2c-be81-764eaf647d44 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_d554f176-4b32-4d38-98c8-3a9ce4ac7184 ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_056f9e17-aa1f-4b2c-be81-764eaf647d44 .
+
+km-dev:PredicateObjectMap_38a25de6-0777-4bf0-ac92-b38ddd866026 rr:objectMap km-dev:RefObjectMap_056f9e17-aa1f-4b2c-be81-764eaf647d44 .
+
+km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a rr:predicateObjectMap km-dev:PredicateObjectMap_38a25de6-0777-4bf0-ac92-b38ddd866026 .
+
+km-dev:PredicateObjectMap_38a25de6-0777-4bf0-ac92-b38ddd866026 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_38a25de6-0777-4bf0-ac92-b38ddd866026 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 a rr:TriplesMap .
+
+_:node1cum3mkvqx1 km-dev:hasTriplesMap km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx16 rr:tableName "datasets.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasLogicalTable _:node1cum3mkvqx16 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 rr:logicalTable _:node1cum3mkvqx16 ;
+	rr:subjectMap _:node1cum3mkvqx17 .
+
+_:node1cum3mkvqx1 km-dev:hasSubjectMap _:node1cum3mkvqx17 .
+
+_:node1cum3mkvqx17 km-dev:isPartOfMapping _:node1cum3mkvqx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://localhost:8070/PEI_ontology#Person1" ;
+	rr:class pei:Person ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "pei:Person1" .
+
+km-dev:PredicateObjectMap_1ce5ad27-61aa-496a-b427-f6158c975012 rr:predicate pei:LastName .
+
+_:node1cum3mkvqx18 rr:column "LastName" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx18 .
+
+km-dev:PredicateObjectMap_1ce5ad27-61aa-496a-b427-f6158c975012 rr:objectMap _:node1cum3mkvqx18 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 rr:predicateObjectMap km-dev:PredicateObjectMap_1ce5ad27-61aa-496a-b427-f6158c975012 .
+
+km-dev:PredicateObjectMap_1ce5ad27-61aa-496a-b427-f6158c975012 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1ce5ad27-61aa-496a-b427-f6158c975012 .
+
+km-dev:PredicateObjectMap_9129b47b-e3c4-4944-8d6b-ca54483423cc rr:predicate pei:Reference .
+
+_:node1cum3mkvqx19 rr:column "Reference" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx19 .
+
+km-dev:PredicateObjectMap_9129b47b-e3c4-4944-8d6b-ca54483423cc rr:objectMap _:node1cum3mkvqx19 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 rr:predicateObjectMap km-dev:PredicateObjectMap_9129b47b-e3c4-4944-8d6b-ca54483423cc .
+
+km-dev:PredicateObjectMap_9129b47b-e3c4-4944-8d6b-ca54483423cc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9129b47b-e3c4-4944-8d6b-ca54483423cc .
+
+km-dev:PredicateObjectMap_0b80f9e9-edc5-4b43-acf9-8fedb8b35c73 rr:predicate pei:FirstName .
+
+_:node1cum3mkvqx20 rr:column "FirstName" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap _:node1cum3mkvqx20 .
+
+km-dev:PredicateObjectMap_0b80f9e9-edc5-4b43-acf9-8fedb8b35c73 rr:objectMap _:node1cum3mkvqx20 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 rr:predicateObjectMap km-dev:PredicateObjectMap_0b80f9e9-edc5-4b43-acf9-8fedb8b35c73 .
+
+km-dev:PredicateObjectMap_0b80f9e9-edc5-4b43-acf9-8fedb8b35c73 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0b80f9e9-edc5-4b43-acf9-8fedb8b35c73 .
+
+km-dev:PredicateObjectMap_420e8fbd-c38e-4924-bc83-61af78b1744c rr:predicate pei:hasOrganization .
+
+km-dev:RefObjectMap_951639d4-6f5f-4037-a845-2cb31a8d7676 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_f35deea4-0744-4d72-8971-89b44970621a ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasObjectMap km-dev:RefObjectMap_951639d4-6f5f-4037-a845-2cb31a8d7676 .
+
+km-dev:PredicateObjectMap_420e8fbd-c38e-4924-bc83-61af78b1744c rr:objectMap km-dev:RefObjectMap_951639d4-6f5f-4037-a845-2cb31a8d7676 .
+
+km-dev:TriplesMap_3293faf2-09ed-487f-9e08-380b60c70b06 rr:predicateObjectMap km-dev:PredicateObjectMap_420e8fbd-c38e-4924-bc83-61af78b1744c .
+
+km-dev:PredicateObjectMap_420e8fbd-c38e-4924-bc83-61af78b1744c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cum3mkvqx1 .
+
+_:node1cum3mkvqx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_420e8fbd-c38e-4924-bc83-61af78b1744c .

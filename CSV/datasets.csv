@@ -1,0 +1,4 @@
+DatasetID,DatasetName,NumberImages,NumberGB,ProvenienceURL,Folder,OrganizationName,OrganizationURL,FirstName,LastName,Reference
+1,SED,167332,30,http://www.multimediaeval.org/datasets/iex.html,Datasets/SED,MediaEval,http://www.multimediaeval.org/,Martha,Larson,m.a.larson@tudelft.nl
+2,USED,525000,50,https://mmlab.science.unitn.it/published-datasets,Datasets/USED,Mmlab,https://mmlab.science.unitn.it/,Francesco,De Natale,mmlab-disi@unitn.it
+3,EiMM,32973,11.2,https://mmlab.science.unitn.it/published-datasets,Datasets/EiMM,Mmlab,https://mmlab.science.unitn.it/,Francesco,De Natale,mmlab-disi@unitn.it
